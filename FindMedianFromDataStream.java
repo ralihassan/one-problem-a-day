@@ -13,7 +13,7 @@ public class FindMedianFromDataStream {
 
         // Test case 1: Adding a single number
         medianFinder.addNum(1);
-        System.out.println("Test case 1: " + (medianFinder.findMedian() == 1.0 ? "Passed" : "Failed"));
+        System.out.println("Test case 1: c" + (medianFinder.findMedian() == 1.0 ? "Passed" : "Failed"));
 
         // Test case 2: Adding two numbers
         medianFinder.addNum(2);
@@ -32,7 +32,7 @@ public class FindMedianFromDataStream {
         System.out.println("Test case 5: " + (medianFinder.findMedian() == 3.0 ? "Passed" : "Failed"));
 
         // Test case 6: Adding numbers in reverse order
-        MedianFinder reverseOrderFinder = new Main().new MedianFinder();
+        MedianFinder reverseOrderFinder = new FindMedianFromDataStream().new MedianFinder();
         reverseOrderFinder.addNum(5);
         reverseOrderFinder.addNum(4);
         reverseOrderFinder.addNum(3);
@@ -41,7 +41,7 @@ public class FindMedianFromDataStream {
         System.out.println("Test case 6: " + (reverseOrderFinder.findMedian() == 3.0 ? "Passed" : "Failed"));
 
         // Test case 7: Adding duplicate numbers
-        MedianFinder duplicateFinder = new Main().new MedianFinder();
+        MedianFinder duplicateFinder = new FindMedianFromDataStream().new MedianFinder();
         duplicateFinder.addNum(2);
         duplicateFinder.addNum(2);
         duplicateFinder.addNum(2);
