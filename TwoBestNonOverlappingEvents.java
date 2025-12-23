@@ -1,5 +1,7 @@
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 class TwoBestNonOverlappingEvents {
 
@@ -31,4 +33,24 @@ class TwoBestNonOverlappingEvents {
         }
         return dp[idx][cnt];
     }
+
+    public int maxTwoEventsPQ(int[][] events) {
+        Queue<int[]> pq = new PriorityQueue<>((a,b) -> a[1] - b[1]);
+        Arrays.sort(events, (a,b) -> a[0] - b[0]);
+
+        int max = 0, maxSoFar = 0;
+
+        for (int event[]: events) {
+            
+            while (!pq.isEmpty() && pq.peek()[1] < event[0]) {
+                maxSoFar = Math.max(maxSoFar, pq.poll()[2]);
+            }
+            
+            max = Math.max(max, maxSoFar+event[2]);
+            pq.add(event);
+        }
+
+        return max;
+    }
+    
 }
